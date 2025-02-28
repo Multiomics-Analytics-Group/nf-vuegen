@@ -1,0 +1,40 @@
+# Set the base image to the official Python 3.12 slim debian bookworm image
+FROM python:3.12-slim-bookworm
+
+# Disable manual feedback for apt-get, update package list, install security updates, 
+# and install packages (procps, chromium, and system dependencies for tinytex and kaleido). 
+# Then clean up the package list and remove the cache.
+RUN export DEBIAN_FRONTEND=noninteractive && \ 
+    apt-get update && \
+    apt-get -y upgrade && \
+    apt-get install -y --no-install-recommends \
+    procps \
+    chromium \
+    wget \
+    perl \
+    libglib2.0-0 \
+    libgdk-pixbuf2.0-0 \
+    libfontconfig1 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install vuegen Python packag
+RUN pip install --no-cache-dir vuegen
+
+# Create and switch to non-root user for security reasons
+RUN useradd --create-home appuser
+USER appuser
+
+# Set the working directory
+WORKDIR /home/appuser
+
+# Install TinyTeX for pdf reports 
+RUN perl -mFile::Find /dev/null &&\
+    wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh 
+
+# Make sure $HOME/bin is in PATH to run TinyTeX and get tracebacks from C crashes
+ENV PATH="${PATH}:/home/appuser/bin" \
+    PYTHONFAULTHANDLER=1
+
+# Set the entrypoint to vuegen
+ENTRYPOINT ["vuegen"]

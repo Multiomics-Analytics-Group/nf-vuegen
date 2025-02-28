@@ -1,0 +1,13 @@
+.DS_Store
+.nextflow/
+poetry.lock
+pyproject.toml
+test.nf
+vuegen_docker_stautorun.nf
+vuegen_pythonscript.nf
+output_docker/
+nf_container_results/
+Earth_microbiome_vuegen_demo_notebook/
+modules/
+
+
