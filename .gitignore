@@ -5,9 +5,13 @@ pyproject.toml
 test.nf
 vuegen_docker_stautorun.nf
 vuegen_pythonscript.nf
+vuegen_docker.nf
+work/
+*.log*
 output_docker/
 nf_container_results/
+nf-core_module_template/
 Earth_microbiome_vuegen_demo_notebook/
-modules/
+Basic_example_vuegen_demo_notebook/
 
 

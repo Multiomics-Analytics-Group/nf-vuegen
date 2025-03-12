@@ -4,9 +4,6 @@ if ((params.config && params.directory) || (!params.config && !params.directory)
     error "Provide either --config or --directory, but not both."
 }
 
-// Determine the output folder dynamically based on report type
-def output_folder = params.report_type == 'streamlit' ? 'streamlit_report' : 'quarto_report'
-
 // Define the process to run VueGen
 process VUEGEN {
 
@@ -19,7 +16,7 @@ process VUEGEN {
         val input_type
 
     output:
-        path("${output_folder}")
+        path "*report"
 
     script:
     """
