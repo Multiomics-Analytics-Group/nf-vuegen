@@ -19,6 +19,7 @@
 - [Case studies](#case-studies)
 - [Web application deployment](#web-application-deployment)
 - [Credits and acknowledgements](#credits-and-acknowledgements)
+- [Citation](#citation)
 - [Contact and feedback](#contact-and-feedback)
 
 ## About the project
@@ -101,6 +102,28 @@ These options provide flexibility depending on whether the goal is online access
 - nf-VueGen was developed by the [Multiomics Network Analytics Group (MoNA)][Mona] at the [Novo Nordisk Foundation Center for Biosustainability (DTU Biosustain)][Biosustain].
 - nf-VueGen relies on the work of numerous open-source projects like [Streamlit](streamlit), [Quarto][quarto], and others. A big thank you to their authors for making this possible!
 - The nf-VueGen logo was designed based on an image created by [Scriberia][scriberia] for The [Turing Way Community][turingway], which is shared under a CC-BY licence. The original image can be found at [Zenodo][zenodo-turingway].
+
+## Citation
+If you use VueGen in your research or publications, please cite it as follows:
+
+**APA:**
+
+Ayala-Ruano, S., Webel, H., & Santos, A. (2025). *VueGen: Automating the generation of scientific reports*. bioRxiv. https://doi.org/10.1101/2025.03.05.641152
+
+**BibTeX:**
+
+```bibtex
+@article{Ayala-Ruano2025VueGen,
+  author  = {Ayala-Ruano, Sebastian and Webel, Henry and Santos, Alberto},
+  title   = {VueGen: Automating the generation of scientific reports},
+  journal = {bioRxiv},
+  year    = {2025},
+  doi     = {10.1101/2025.03.05.641152},
+  publisher = {Cold Spring Harbor Laboratory},
+  url     = {https://www.biorxiv.org/content/10.1101/2025.03.05.641152},
+  eprint = {https://www.biorxiv.org/content/10.1101/2025.03.05.641152.full.pdf}
+}
+```
 
 ## Contact and feedback
 We appreciate your feedback! If you have any comments, suggestions, or run into issues while using VueGen, feel free to [open an issue][new-issue] in this repository. Your input helps us make nf-VueGen better for everyone. 
