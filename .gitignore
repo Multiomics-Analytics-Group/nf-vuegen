@@ -11,7 +11,5 @@ work/
 output_docker/
 nf_container_results/
 nf-core_module_template/
-Earth_microbiome_vuegen_demo_notebook/
-Basic_example_vuegen_demo_notebook/
 
 
