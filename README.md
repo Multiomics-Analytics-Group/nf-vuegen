@@ -104,7 +104,7 @@ These options provide flexibility depending on whether the goal is online access
 - The nf-VueGen logo was designed based on an image created by [Scriberia][scriberia] for The [Turing Way Community][turingway], which is shared under a CC-BY licence. The original image can be found at [Zenodo][zenodo-turingway].
 
 ## Citation
-If you use VueGen in your research or publications, please cite it as follows:
+If you use nf-VueGen in your research or publications, please cite it as follows:
 
 **APA:**
 
@@ -142,6 +142,8 @@ We appreciate your feedback! If you have any comments, suggestions, or run into 
 [assemblyqc]: https://github.com/Plant-Food-Research-Open/assemblyqc
 [docker]: https://www.docker.com/
 [vuegen-docker-quay]: https://quay.io/repository/dtu_biosustain_dsp/vuegen
+[emp]: https://earthmicrobiome.org/
+[quarto]: https://quarto.org/
 [st-cloud]: https://streamlit.io/cloud
 [stlite]: https://github.com/whitphx/stlite
 [st-forum-exe]: https://discuss.streamlit.io/t/streamlit-deployment-as-an-executable-file-exe-for-windows-macos-and-android/6812
