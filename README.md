@@ -32,7 +32,7 @@ An overview of the VueGen workflow is shown in the figure below:
 
 A metro-map representation of the VueGen nf-core module is presented below:
 
-![nf-VueGen MetroMap](https://raw.githubusercontent.com/Multiomics-Analytics-Group/vuegen/main/docs/images/metro_map_vuegen.svg)
+![nf-VueGen MetroMap](https://raw.githubusercontent.com/Multiomics-Analytics-Group/nf-vuegen/main/docs/images/metro_map_vuegen.svg)
 
 The workflow starts with an input dataset and continues through different stages, generating intermediate outputs in various formats. In the final stage, the VueGen nf-core module collects these outputs from a folder and generates reports in multiple formats.
 
