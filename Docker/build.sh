@@ -1,3 +1,3 @@
 #!/bin/bash
 set -euo pipefail
-docker image build --no-cache -t vuegen:docker .
+docker image build --platform linux/amd64,linux/arm64 --no-cache -t quay.io/dtu_biosustain_dsp/vuegen:v0.3.1-docker -f docker.Dockerfile .

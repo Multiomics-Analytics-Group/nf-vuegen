@@ -19,7 +19,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     && rm -rf /var/lib/apt/lists/*
 
 # Install vuegen Python packag
-RUN pip install --no-cache-dir vuegen
+RUN pip install --no-cache-dir -U vuegen
 
 # Create and switch to non-root user for security reasons
 RUN useradd --create-home appuser
@@ -35,6 +35,3 @@ RUN perl -mFile::Find /dev/null &&\
 # Make sure $HOME/bin is in PATH to run TinyTeX and get tracebacks from C crashes
 ENV PATH="${PATH}:/home/appuser/bin" \
     PYTHONFAULTHANDLER=1
-
-# Set the entrypoint to vuegen
-ENTRYPOINT ["vuegen"]
