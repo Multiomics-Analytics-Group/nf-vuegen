@@ -28,8 +28,11 @@ USER appuser
 WORKDIR /home/appuser
 
 # Install TinyTeX for pdf reports 
-RUN perl -mFile::Find /dev/null &&\
-    wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh 
+RUN perl -mFile::Find /dev/null && \
+    wget -qO- "https://yihui.org/tinytex/install-bin-unix.sh" | sh && \
+    ~/.TinyTeX/bin/*/tlmgr install \
+        koma-script \
+        caption
 
 # Set permissions for the appuser home directory
 RUN chmod -R 777 /home/appuser
