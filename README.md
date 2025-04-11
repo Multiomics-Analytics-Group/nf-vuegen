@@ -43,7 +43,11 @@ The VueGen documentation is available at [vuegen.readthedocs.io][vuegen-docs], w
 We are currently working on the integration of VueGen with the nf-core framework. This process can take some time because it requires the approval of the nf-core community. In the meantime, you can clone this repository and use nf-VueGen as a standalone Nextflow module. The `main.nf` file provides an example of how to use the nf-VueGen module in a Nextflow pieline. 
 
 ### Dependencies
-You should have [Nextflow][nextflow] and [Docker][docker] installed on your system to run nf-VueGen. We use Docker to containetize the nf-VueGen environment, ensuring reproducibility and compatibility across different systems. The Docker image is available at [quay.io/dtu_biosustain_dsp/vuegen][vuegen-docker-quay] and is automatically pulled by Nextflow when running the pipeline. 
+You should have [Nextflow][nextflow] installed on your system to run nf-VueGen. [Conda][conda] or [Docker][docker] are also required to manage dependencies and create an isolated environment for the nf-VueGen module. 
+
+We recommend using Docker to containetize the nf-VueGen environment, ensuring reproducibility and compatibility across different systems. The Docker image is available at [quay.io/dtu_biosustain_dsp/vuegen][vuegen-docker-quay] and is automatically pulled by Nextflow when running the module. The Dockerfiles to build the image is available in the [Docker folder][docker-folder] of this repository. 
+
+If you prefer to use Conda, a virtual environment with the required dependencies is created automatically by Nextflow when running the module, using the information in the `modules/environment.yml` file.
 
 ## Execution
 > [!IMPORTANT]
@@ -52,14 +56,17 @@ You should have [Nextflow][nextflow] and [Docker][docker] installed on your syst
 Run nf-VueGen using a directory with the following command:
 
 ```bash
-nextflow run main.nf --directory docs/example_data/Basic_example_vuegen_demo_notebook --report_type html
+nextflow run main.nf --directory docs/example_data/Basic_example_vuegen_demo_notebook --report_type html -profile docker
 ```
 
 It's also possible to provide a configuration file instead of a directory:
 
 ```bash
-nextflow run main.nf --config docs/example_config_files/Basic_example_vuegen_demo_notebook_config.yaml --report_type html
+nextflow run main.nf --config docs/example_config_files/Basic_example_vuegen_demo_notebook_config.yaml --report_type html -profile docker
 ```
+
+> [!NOTE]
+> If you use Conda for environment management, you should use the `-profile conda` option instead of `-profile docker` in the commands above.
 
 The current report types supported by nf-VueGen are:
 * Streamlit
@@ -130,6 +137,8 @@ We appreciate your feedback! If you have any comments, suggestions, or run into 
 
 [nf-vuegen-license]: https://github.com/Multiomics-Analytics-Group/nf-vuegen/blob/main/LICENSE
 [vuegen-docs]: https://vuegen.readthedocs.io/
+[conda]: https://docs.conda.io/en/latest/
+[docker-folder]: https://github.com/Multiomics-Analytics-Group/nf-vuegen/tree/main/Docker
 [streamlit]: https://streamlit.io/ 
 [emp-html-demo]: https://multiomics-analytics-group.github.io/vuegen/
 [emp-st-demo]: https://earth-microbiome-vuegen-demo.streamlit.app/

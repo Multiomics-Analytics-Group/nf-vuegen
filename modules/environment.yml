@@ -4,4 +4,4 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
-  - bioconda::vuegen=0.2.2
+  - bioconda::vuegen=0.3.2
