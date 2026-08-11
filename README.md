@@ -1,3 +1,7 @@
+Lives now in `nf-core/modules`: https://nf-co.re/modules/vuegen/
+
+------------
+
 ![nf-VueGen Logo](https://raw.githubusercontent.com/Multiomics-Analytics-Group/nf-vuegen/main/docs/images/nfvuegen_logo.svg)
 -----------------
 <p align="center">
