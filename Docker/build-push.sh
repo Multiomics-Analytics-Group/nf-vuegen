@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ORG="quay.io/dtu_biosustain_dsp"
-VERSION="v0.5.0"
+VERSION="v0.5.1"
 
 # 1. Build & push the base image (nextflow version)
 docker buildx build \

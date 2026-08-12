@@ -17,7 +17,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install vuegen Python packag
+# Install vuegen Python package
 RUN pip install --no-cache-dir -U vuegen
 
 # Create and switch to non-root user for security reasons
